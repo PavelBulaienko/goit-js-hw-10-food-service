@@ -15,5 +15,19 @@
     "js": "^0.1.0",
     "parcel-plugin-nuke-dist": "^1.0.1",
     "templates": "^1.2.9"
-  }
+  },
+  "name": "goit-js-hw-10-food-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PavelBulaienko/goit-js-hw-10-food-service.git"
+  },
+  "keywords": [],
+  "author": "Pavel <p380504942472@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PavelBulaienko/goit-js-hw-10-food-service/issues"
+  },
+  "description": ""
 }

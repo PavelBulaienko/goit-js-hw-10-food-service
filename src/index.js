@@ -1,5 +1,6 @@
 import menuTmpl from '/templates/menu.hbs';
-import menuList from './menu.json';
+import menuList from './templates/menu.json';
+
 
 const menuRef = document.querySelector('.js-menu');
 const menuMarkup = createMenuMarkup(menuList);
