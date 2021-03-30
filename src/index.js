@@ -29,35 +29,32 @@ const Theme = {
 themeSwitchToggleRef.addEventListener('change', () => {
 
     if (localStorage.getItem('theme') === JSON.stringify(Theme.LIGHT)) {
-        addDarkTheme();
+        updateTheme('dark-theme', 'light-theme');
     }
     else if (localStorage.getItem('theme') === JSON.stringify(Theme.DARK)) {
-        addLightTheme();
+        updateTheme('light-theme', 'dark-theme');
     }
     else {
-        addDarkTheme();
+        updateTheme('dark-theme', 'light-theme');
     }
 })
 
+function updateTheme(addClass, remClass) {
+    bodyRef.classList.add(addClass);
+    bodyRef.classList.remove(remClass);
+    if (addClass === 'light-theme') {
+        localStorage.setItem('theme', JSON.stringify(Theme.LIGHT));
+    }
+    else {
+        localStorage.setItem('theme', JSON.stringify(Theme.DARK));
+    }
+}
+
 function setDefaultTheme() {
-    bodyRef.classList.add('light-theme');
-    bodyRef.classList.remove('dark-theme');
+    updateTheme('light-theme', 'dark-theme');
 }
 
 function setDefaultDarkTheme() {
-    bodyRef.classList.add('dark-theme');
-    bodyRef.classList.remove('light-theme');
+    updateTheme('dark-theme', 'light-theme');
     themeSwitchToggleRef.checked = true;
-}
-
-function addLightTheme() {
-    bodyRef.classList.add('light-theme');
-    bodyRef.classList.remove('dark-theme');
-    localStorage.setItem('theme', JSON.stringify(Theme.LIGHT));
-}
-
-function addDarkTheme() {
-    bodyRef.classList.add('dark-theme');
-    bodyRef.classList.remove('light-theme');
-    localStorage.setItem('theme', JSON.stringify(Theme.DARK));
 }
